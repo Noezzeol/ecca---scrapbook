@@ -52,6 +52,17 @@
       border-radius: 10px;
       margin-bottom: 1rem;
     }
+    .chapter-title {
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1rem;
+      color: #6a1b9a;
+    }
+    .chapter-content {
+      display: none;
+      margin-top: 0.5rem;
+      line-height: 1.6;
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -82,7 +93,22 @@
   <section id="novel">
     <div class="card">
       <h2>Novel: Sepotong Rasa</h2>
-      <p>📖 <strong>Bab 1:</strong> Awal dari semuanya... <br> (Klik untuk baca selengkapnya, versi klik-buka bab bisa ditambahkan nanti!)</p>
+      <div class="chapter">
+        <div class="chapter-title" onclick="toggleChapter('bab1')">📖 Bab 1: Awal dari Semua</div>
+        <div id="bab1" class="chapter-content">
+          Hari itu langit seperti membuka lembaran baru. Aku berdiri di halte, menatap dunia yang perlahan berubah.
+        </div>
+
+        <div class="chapter-title" onclick="toggleChapter('bab2')">📖 Bab 2: Pertemuan Kedua</div>
+        <div id="bab2" class="chapter-content">
+          Kami bertemu lagi di tempat tak terduga. Suaranya masih sama, matanya masih teduh. Rasanya seperti mimpi.
+        </div>
+
+        <div class="chapter-title" onclick="toggleChapter('bab3')">📖 Bab 3: Langit di Hari Itu</div>
+        <div id="bab3" class="chapter-content">
+          Angin berhembus pelan, membawa kenangan di antara suara langkah kaki dan senyuman yang tertinggal.
+        </div>
+      </div>
     </div>
   </section>
 
@@ -97,5 +123,12 @@
   <footer>
     Dibuat penuh cinta oleh Ecca • Scrapbook Digital 2025
   </footer>
+
+  <script>
+    function toggleChapter(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'none' || el.style.display === '' ? 'block' : 'none';
+    }
+  </script>
 </body>
 </html>
